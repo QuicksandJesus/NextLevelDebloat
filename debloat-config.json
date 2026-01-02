@@ -1,0 +1,111 @@
+{
+    "_metadata": {
+        "solution": "Windows 11 Business Debloat",
+        "brand": "#MundyTuned",
+        "contact": "bryan@mundytuned.com",
+        "version": "3.0",
+        "created": "2025-12-31",
+        "description": "Complete Windows 11 business optimization solution with consumer restoration capability"
+    },
+    "MachineConfigurations": {
+        "default": {
+            "AppsToRemove": [
+                "Microsoft.BingNews",
+                "Microsoft.BingWeather",
+                "Microsoft.GamingApp",
+                "Microsoft.GetHelp",
+                "Microsoft.Getstarted",
+                "Microsoft.MicrosoftOfficeHub",
+                "Microsoft.MicrosoftSolitaireCollection",
+                "Microsoft.MicrosoftStickyNotes",
+                "Microsoft.MixedReality.Portal",
+                "Microsoft.MSPaint",
+                "Microsoft.OneDriveSync",
+                "Microsoft.People",
+                "Microsoft.PowerAutomateDesktop",
+                "Microsoft.SkypeApp",
+                "Microsoft.StorePurchaseApp",
+                "Microsoft.Todos",
+                "Microsoft.Windows.Photos",
+                "Microsoft.WindowsCamera",
+                "Microsoft.WindowsFeedbackHub",
+                "Microsoft.WindowsMaps",
+                "Microsoft.WindowsPhone",
+                "Microsoft.WindowsSoundRecorder",
+                "Microsoft.WindowsAlarms",
+                "Microsoft.WindowsCommunicationsApps",
+                "Microsoft.YourPhone",
+                "Microsoft.ZuneMusic",
+                "Microsoft.ZuneVideo",
+                "Microsoft.WindowsBackup",
+                "Microsoft.OutlookForWindows",
+                "Microsoft.Windows.Ai.Copilot.Provider",
+                "Microsoft.Xbox.TCUI",
+                "Microsoft.XboxApp",
+                "Microsoft.XboxGameOverlay",
+                "Microsoft.XboxGamingOverlay",
+                "Microsoft.XboxIdentityProvider",
+                "Microsoft.XboxSpeechToTextOverlay",
+                "Microsoft.WalletService",
+                "Microsoft.WebMediaExtensions",
+                "Microsoft.Microsoft3DViewer",
+                "Microsoft.ConnectivityStore"
+            ],
+            "PreserveApps": {},
+            "ServicesToDisable": [
+                "XblAuthManager",
+                "XboxNetApiSvc",
+                "XboxGipSvc",
+                "DiagTrack",
+                "MapsBroker",
+                "WalletService",
+                "RetailDemo",
+                "wisvc"
+            ],
+            "TasksToDisable": [
+                "\\Microsoft\\Windows\\Application Experience\\Microsoft Compatibility Appraiser",
+                "\\Microsoft\\Windows\\Application Experience\\Customer Experience Improvement Program",
+                "\\Microsoft\\Windows\\Application Experience\\Program Data Updater",
+                "\\Microsoft\\Windows\\XblGameSave\\XblGameSaveTask"
+            ],
+            "RegistrySettings": {
+                "DisableAdvertising": true,
+                "DisableCopilot": true,
+                "DisableWidgets": true,
+                "DisableBingSearch": true,
+                "DisableSpotlight": true,
+                "DisableGameBar": true,
+                "DisableErrorReporting": true
+            }
+        },
+        "laptop": {
+            "PreserveApps": {
+                "Microsoft.WindowsCamera": true,
+                "Microsoft.WindowsCalculator": true
+            }
+        },
+        "desktop": {
+            "PreserveApps": {}
+        },
+        "domain-joined": {
+            "SkipDomainManagedSettings": true
+        }
+    },
+    "Logging": {
+        "Enabled": true,
+        "LogFilePath": "C:\\temp\\debloat-log.txt",
+        "VerboseLogging": false
+    },
+    "Backup": {
+        "Enabled": true,
+        "BackupPath": "C:\\temp\\registry-backup"
+    },
+    "Execution": {
+        "Interactive": false,
+        "DryRun": false,
+        "SkipHardwareDetection": false,
+        "SkipDomainCheck": false,
+        "RestartExplorer": true,
+        "ApplyGroupPolicyUpdates": true
+    }
+}
