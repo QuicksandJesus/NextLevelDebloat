@@ -168,7 +168,8 @@ function Remove-BusinessPolicies {
                     Remove-Item -Path $key -Recurse -Force -ErrorAction Stop
                     Write-Log "Removed policy key: $key"
                 } catch {
-                    Write-Log "Failed to remove policy key $key: $($_.Exception.Message)" -Level "WARN"
+                    $errMsg = $_.Exception.Message
+                    Write-Log ("Failed to remove policy key $key" + ": " + $errMsg) -Level "WARN"
                 }
             }
         }
@@ -268,7 +269,8 @@ function Restore-WindowsApps {
                 Write-Log "App not available for reinstall: $app" -Level "WARN"
             }
         } catch {
-            Write-Log "Failed to reinstall $app: $($_.Exception.Message)" -Level "WARN"
+            $errMsg = $_.Exception.Message
+            Write-Log ("Failed to reinstall $app" + ": " + $errMsg) -Level "WARN"
         }
     }
     
@@ -324,7 +326,8 @@ function Verify-Restoration {
     foreach ($svc in $servicesToCheck) {
         $service = Get-Service -Name $svc -ErrorAction SilentlyContinue
         if ($service -and $service.StartType -ne "Disabled") {
-            Write-Log "✓ Service $svc: $($service.StartType)"
+            $startType = $service.StartType
+            Write-Log "[OK] Service ${svc}: $startType"
             $checks.Services++
         }
     }

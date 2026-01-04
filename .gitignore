@@ -1,27 +1,20 @@
-# Flag files (runtime files)
-*.flag
+# System files
+snapshots/*.tar.gz
 
 # Log files
 *.log
-debloat-log.txt
-restore-log.txt
 
-# Snapshot files (large)
-snapshot-*.tar.gz
-
-# Windows specific
-Thumbs.db
-desktop.ini
-
-# Backup files (registry backups are large)
-registry-backup-*.reg
+# Registry backups
+*.reg
 
 # Temporary files
-push-github.bat
-token.txt
-create-repo.bat
+*.tmp
+*.flag
 
-# Documentation that's not part of main project
-REPO_VERIFICATION.md
-TOKEN_FIX.md
-GITHUB_PUSH.md
+# Snapshots directory
+snapshots/
+
+# Temporary scripts and files
+nul
+script_output.txt
+applocker-status.txt
